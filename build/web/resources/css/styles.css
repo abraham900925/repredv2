@@ -1,0 +1,187 @@
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+form {
+   background-color: #FFFFFF;
+}
+
+td {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+th {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+form {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+input {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+textarea {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+select {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+ul {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   list-style-type: square;
+   list-style-position: outside;
+}
+
+li {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+ol {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   list-style-type: decimal;
+   list-style-position: outside;
+}
+
+.small {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 9px;
+}
+
+.big {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 18px;
+}
+
+.bodystyle {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+.box1 {
+   padding: 3px;
+   border-width: thin;
+   border-style: solid;
+   border-color: #CCCCCC #666666 #666666 #CCCCCC;
+}
+
+.box2 {
+   border-width: 3px;
+   border-style: solid;
+   padding: 5px;
+}
+
+/* Style of the web work portal's footer (footer.jsp) */
+.footer {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   font-weight: normal;
+   color: #FFFFFF;
+   background-color: #1B3869
+}
+
+a {
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+
+.link {
+   color: #CCFFFF;
+   text-decoration: none;
+}
+
+.link:hover {
+   color: #FFFF00;
+   text-decoration: underline;
+}
+
+.tabletitle
+{
+   background-color: #999999 /*#1B3869*/
+}
+
+.tablecell
+{
+   background-color: #E9E9E9;
+}
+
+.tabletitle2
+{
+   background-color: #E9E9E9;
+}
+
+.tablecell2
+{
+   background-color: #FFFFFF;
+   color: #666666;
+}
+
+.tableTitle {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   font-weight: bold;
+   text-decoration: none;
+   background-color: #E9E9E9;
+}
+
+
+/* Style of the web work portal's table cells */
+.tableData {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   color: #666666;
+   background-color: #FFFFFF;
+}
+
+/* MODIFICACION 18 MARZO 2008 */
+.tbl_border {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #22568F;
+	border: thin solid #000000;
+}
+.td_header {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #FFFFFF;
+/* Marca del Cambio : WELL-JMQ-C-04-2006-14  Inicia la Modificacion   12/06/2014 */
+	background-color: #D1220D;
+/* Marca del Cambio : WELL-JMQ-C-04-2006-14  Termina la Modificacion   12/06/2014 */
+}
+.td_data {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #22568F;
+}

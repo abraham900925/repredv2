@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<doc>
+    <LDAPAUTH>
+        <ADMCONNECT>
+            <FACTORY value="com.sun.jndi.ldap.LdapCtxFactory"/>
+            <URL value="ldap://ldapGP.prosa.com.mx:1389/"/>
+            <AUTHENTICATION value="simple"/>
+            <INITIALCONTEXT value="o=prosa.com.mx,o=isp"/>
+            <PROTOCOL value=""/>
+        </ADMCONNECT>
+        <PEOPLE value=""/>
+        <APPLICATION value="ou=srr,ou=Aplicaciones"/>
+    </LDAPAUTH>
+</doc>

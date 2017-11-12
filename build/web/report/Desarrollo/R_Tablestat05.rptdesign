@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Eclipse BIRT 2.0 -->
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.6" id="1">
+    <property name="author">Wellcom SA de CV</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.1.2.v20070205-1728 Build &lt;20070205-1728></property>
+    <property name="units">in</property>
+    <text-property name="title">Reporte Transacciones Aprobadas por Instituciones (Stat05)</text-property>
+    <property name="comments">Copyright (c) 2006 &lt;&lt;Your Company Name here>></property>
+    <text-property name="displayName">Transacciones Aprobadas por Instituciones (Stat05)</text-property>
+    <parameters>
+        <scalar-parameter name="Fecha_Menor" id="296">
+            <property name="valueType">static</property>
+            <property name="dataType">dateTime</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Fecha_Mayor" id="297">
+            <property name="valueType">static</property>
+            <property name="dataType">dateTime</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Banco" id="447">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.255.220.35:1564:NEUN</property>
+            <property name="odaUser">pnf</property>
+            <encrypted-property name="odaPassword">cG5m</encrypted-property>
+            <property name="odaJndiName">jdbc/SRRREDDBP</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="5">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FECHA</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CODIGO_BANCO_EMI</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CODIGO_BANCO_ADQ</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CODIGO_TIPO_OPERACION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">CODIGO_TIPO_CUENTA</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">CONTADOR_NCLIENTES_NCAJEROS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">IMPORTE_NCLIENTES_NCAJEROS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">CONTADOR_NCLIENTES_OCAJEROS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">IMPORTE_NCLIENTES_OCAJEROS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">CONTADOR_NCLIENTES_ICAJEROS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">IMPORTE_NCLIENTES_ICAJEROS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">CONTADOR_OCLIENTES_NCAJEROS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">IMPORTE_OCLIENTES_NCAJEROS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param1</property>
+                    <property name="paramName">Fecha_Menor</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param2</property>
+                    <property name="paramName">Fecha_Mayor</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FECHA</property>
+                    <property name="nativeName">FECHA</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CODIGO_BANCO_EMI</property>
+                    <property name="nativeName">CODIGO_BANCO_EMI</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CODIGO_BANCO_ADQ</property>
+                    <property name="nativeName">CODIGO_BANCO_ADQ</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CODIGO_TIPO_OPERACION</property>
+                    <property name="nativeName">CODIGO_TIPO_OPERACION</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">CODIGO_TIPO_CUENTA</property>
+                    <property name="nativeName">CODIGO_TIPO_CUENTA</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">CONTADOR_NCLIENTES_NCAJEROS</property>
+                    <property name="nativeName">CONTADOR_NCLIENTES_NCAJEROS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">IMPORTE_NCLIENTES_NCAJEROS</property>
+                    <property name="nativeName">IMPORTE_NCLIENTES_NCAJEROS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">CONTADOR_NCLIENTES_OCAJEROS</property>
+                    <property name="nativeName">CONTADOR_NCLIENTES_OCAJEROS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">IMPORTE_NCLIENTES_OCAJEROS</property>
+                    <property name="nativeName">IMPORTE_NCLIENTES_OCAJEROS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">CONTADOR_NCLIENTES_ICAJEROS</property>
+                    <property name="nativeName">CONTADOR_NCLIENTES_ICAJEROS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">IMPORTE_NCLIENTES_ICAJEROS</property>
+                    <property name="nativeName">IMPORTE_NCLIENTES_ICAJEROS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">CONTADOR_OCLIENTES_NCAJEROS</property>
+                    <property name="nativeName">CONTADOR_OCLIENTES_NCAJEROS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">IMPORTE_OCLIENTES_NCAJEROS</property>
+                    <property name="nativeName">IMPORTE_OCLIENTES_NCAJEROS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select *
+from TBL_SRR_REP_STAT05
+WHERE FECHA>=? AND FECHA&lt;=?</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FECHA</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FECHA</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CODIGO_BANCO_EMI</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>4</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CODIGO_BANCO_EMI</design:label>
+            <design:formattingHints>
+              <design:displaySize>4</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CODIGO_BANCO_ADQ</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>4</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CODIGO_BANCO_ADQ</design:label>
+            <design:formattingHints>
+              <design:displaySize>4</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CODIGO_TIPO_OPERACION</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CODIGO_TIPO_OPERACION</design:label>
+            <design:formattingHints>
+              <design:displaySize>9</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CODIGO_TIPO_CUENTA</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CODIGO_TIPO_CUENTA</design:label>
+            <design:formattingHints>
+              <design:displaySize>9</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CONTADOR_NCLIENTES_NCAJEROS</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>7</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTADOR_NCLIENTES_NCAJEROS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>IMPORTE_NCLIENTES_NCAJEROS</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>IMPORTE_NCLIENTES_NCAJEROS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CONTADOR_NCLIENTES_OCAJEROS</design:name>
+            <design:position>8</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>7</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTADOR_NCLIENTES_OCAJEROS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>IMPORTE_NCLIENTES_OCAJEROS</design:name>
+            <design:position>9</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>IMPORTE_NCLIENTES_OCAJEROS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CONTADOR_NCLIENTES_ICAJEROS</design:name>
+            <design:position>10</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>7</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTADOR_NCLIENTES_ICAJEROS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>IMPORTE_NCLIENTES_ICAJEROS</design:name>
+            <design:position>11</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>IMPORTE_NCLIENTES_ICAJEROS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CONTADOR_OCLIENTES_NCAJEROS</design:name>
+            <design:position>12</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>7</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTADOR_OCLIENTES_NCAJEROS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>IMPORTE_OCLIENTES_NCAJEROS</design:name>
+            <design:position>13</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>IMPORTE_OCLIENTES_NCAJEROS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.4895833333in</property>
+            <property name="leftMargin">0.5208333333in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="345">
+            <property name="width">100%</property>
+            <column id="346">
+                <property name="width">0.8854166667in</property>
+            </column>
+            <column id="347">
+                <property name="width">7.6041666667in</property>
+            </column>
+            <row id="348">
+                <property name="verticalAlign">middle</property>
+                <cell id="349">
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="101">
+                        <property name="height">48px</property>
+                        <property name="width">76px</property>
+                        <property name="source">embed</property>
+                        <property name="imageName">red.jpg</property>
+                    </image>
+                </cell>
+                <cell id="350">
+                    <text id="102">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[TRANSACCIONES APROBADAS POR INSTITUCIONES (Stat05)
+]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+        <grid id="320">
+            <property name="marginTop">auto</property>
+            <property name="marginLeft">32%</property>
+            <property name="marginBottom">auto</property>
+            <property name="marginRight">auto</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">0.40625in</property>
+            <property name="width">4.125in</property>
+            <column id="330">
+                <property name="width">0.7708333333in</property>
+            </column>
+            <column id="321">
+                <property name="width">1.5416666667in</property>
+            </column>
+            <column id="322">
+                <property name="width">0.3229166667in</property>
+            </column>
+            <column id="323">
+                <property name="width">1.4895833333in</property>
+            </column>
+            <row id="324">
+                <property name="height">0.40625in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="329">
+                    <text id="331">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Del:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="325">
+                    <text-data id="328">
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["Fecha_Menor"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+                <cell id="326">
+                    <text id="333">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[al:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="327">
+                    <property name="verticalAlign">middle</property>
+                    <text-data id="334">
+                        <expression name="valueExpr">params["Fecha_Mayor"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="336">
+            <property name="marginLeft">0pt</property>
+            <property name="height">0.25in</property>
+            <property name="width">2.625in</property>
+            <column id="337">
+                <property name="width">0.8229166667in</property>
+            </column>
+            <column id="338">
+                <property name="width">1.8020833333in</property>
+            </column>
+            <row id="339">
+                <property name="height">0.25in</property>
+                <cell id="340">
+                    <text id="342">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Banco:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="341">
+                    <text-data id="482">
+                        <expression name="valueExpr">params["Banco"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+        <table id="352">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">xx-small</property>
+            <property name="height">2.9895833333in</property>
+            <property name="width">8.53125in</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FECHA</property>
+                    <expression name="expression">dataSetRow["FECHA"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">CODIGO_BANCO_EMI</property>
+                    <expression name="expression">dataSetRow["CODIGO_BANCO_EMI"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CODIGO_BANCO_ADQ</property>
+                    <expression name="expression">dataSetRow["CODIGO_BANCO_ADQ"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CODIGO_TIPO_OPERACION</property>
+                    <expression name="expression">dataSetRow["CODIGO_TIPO_OPERACION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CODIGO_TIPO_CUENTA</property>
+                    <expression name="expression">dataSetRow["CODIGO_TIPO_CUENTA"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CONTADOR_NCLIENTES_NCAJEROS</property>
+                    <expression name="expression">dataSetRow["CONTADOR_NCLIENTES_NCAJEROS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">IMPORTE_NCLIENTES_NCAJEROS</property>
+                    <expression name="expression">dataSetRow["IMPORTE_NCLIENTES_NCAJEROS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CONTADOR_NCLIENTES_OCAJEROS</property>
+                    <expression name="expression">dataSetRow["CONTADOR_NCLIENTES_OCAJEROS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">IMPORTE_NCLIENTES_OCAJEROS</property>
+                    <expression name="expression">dataSetRow["IMPORTE_NCLIENTES_OCAJEROS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CONTADOR_NCLIENTES_ICAJEROS</property>
+                    <expression name="expression">dataSetRow["CONTADOR_NCLIENTES_ICAJEROS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">IMPORTE_NCLIENTES_ICAJEROS</property>
+                    <expression name="expression">dataSetRow["IMPORTE_NCLIENTES_ICAJEROS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CONTADOR_OCLIENTES_NCAJEROS</property>
+                    <expression name="expression">dataSetRow["CONTADOR_OCLIENTES_NCAJEROS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">IMPORTE_OCLIENTES_NCAJEROS</property>
+                    <expression name="expression">dataSetRow["IMPORTE_OCLIENTES_NCAJEROS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TOTAL</property>
+                    <expression name="expression">row["IMPORTE_NCLIENTES_NCAJEROS"]+row["IMPORTE_NCLIENTES_OCAJEROS"]+row["IMPORTE_NCLIENTES_ICAJEROS"]+row["IMPORTE_OCLIENTES_NCAJEROS"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">TOTAL_CONT</property>
+                    <expression name="expression">row["CONTADOR_NCLIENTES_NCAJEROS"]+row["CONTADOR_NCLIENTES_OCAJEROS"]+row["CONTADOR_NCLIENTES_ICAJEROS"]+row["CONTADOR_OCLIENTES_NCAJEROS"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <column id="424">
+                <property name="width">0.5833333333in</property>
+            </column>
+            <column id="425">
+                <property name="width">0.625in</property>
+            </column>
+            <column id="426">
+                <property name="width">0.9583333333in</property>
+            </column>
+            <column id="427">
+                <property name="width">0.8645833333in</property>
+            </column>
+            <column id="428">
+                <property name="width">0.84375in</property>
+            </column>
+            <column id="429">
+                <property name="width">0.7291666667in</property>
+            </column>
+            <column id="430">
+                <property name="width">0.75in</property>
+            </column>
+            <column id="431">
+                <property name="width">0.7708333333in</property>
+            </column>
+            <column id="432">
+                <property name="width">0.7395833333in</property>
+            </column>
+            <column id="433">
+                <property name="width">0.5520833333in</property>
+            </column>
+            <column id="451">
+                <property name="width">0.5104166667in</property>
+            </column>
+            <column id="439">
+                <property name="width">0.6041666667in</property>
+            </column>
+            <header>
+                <row id="353">
+                    <property name="backgroundColor">#4BC9BC</property>
+                    <property name="color">#FFFFFF</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="360">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="361">
+                            <text-property name="text">Tipo de Operación</text-property>
+                        </label>
+                    </cell>
+                    <cell id="362">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="363">
+                            <text-property name="text">Tipo de Cuenta</text-property>
+                        </label>
+                    </cell>
+                    <cell id="364">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="365">
+                            <text-property name="text">Cont. Nuestros Clientes en Nuestros Cajeros</text-property>
+                        </label>
+                    </cell>
+                    <cell id="366">
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="367">
+                            <text-property name="text">Imp. Nuestros Clientes en Nuestros Cajeros</text-property>
+                        </label>
+                    </cell>
+                    <cell id="368">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="369">
+                            <text-property name="text">Cont. Nuestros Clientes en Otros Cajeros</text-property>
+                        </label>
+                    </cell>
+                    <cell id="370">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="371">
+                            <text-property name="text">Imp. Nuestros Clientes en Otros Cajeros</text-property>
+                        </label>
+                    </cell>
+                    <cell id="372">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="373">
+                            <text-property name="text">Cont. Otros Clientes Cajeros Intercambio</text-property>
+                        </label>
+                    </cell>
+                    <cell id="374">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="375">
+                            <text-property name="text">Imp. Otros Clientes Cajeros Intercambio</text-property>
+                        </label>
+                    </cell>
+                    <cell id="376">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="377">
+                            <text-property name="text">Cont. Otros Clientes en Nuestros Cajeros</text-property>
+                        </label>
+                    </cell>
+                    <cell id="378">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="379">
+                            <text-property name="text">Imp. Otros Clientes en nuestros Cajeros</text-property>
+                        </label>
+                    </cell>
+                    <cell id="448">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <text id="452">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Contador Total]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="436">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <text id="440">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Intercambio Total
+]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <group id="453">
+                <property name="groupName">Grupo</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr">row["CODIGO_TIPO_OPERACION"]</expression>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <header>
+                    <row id="454">
+                        <cell id="455">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <data id="480">
+                                <property name="resultSetColumn">CODIGO_TIPO_OPERACION</property>
+                            </data>
+                        </cell>
+                        <cell id="456"/>
+                        <cell id="457"/>
+                        <cell id="458"/>
+                        <cell id="459"/>
+                        <cell id="460"/>
+                        <cell id="461"/>
+                        <cell id="462"/>
+                        <cell id="463"/>
+                        <cell id="464"/>
+                        <cell id="465"/>
+                        <cell id="466"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="467">
+                        <property name="height">0.2395833333in</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">true</expression>
+                            </structure>
+                        </list-property>
+                        <cell id="468"/>
+                        <cell id="469"/>
+                        <cell id="470"/>
+                        <cell id="471"/>
+                        <cell id="472"/>
+                        <cell id="473"/>
+                        <cell id="474"/>
+                        <cell id="475"/>
+                        <cell id="476"/>
+                        <cell id="477"/>
+                        <cell id="478"/>
+                        <cell id="479"/>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="380">
+                    <property name="textAlign">right</property>
+                    <cell id="387">
+                        <data id="490">
+                            <property name="resultSetColumn">CODIGO_TIPO_OPERACION</property>
+                        </data>
+                    </cell>
+                    <cell id="389">
+                        <data id="390">
+                            <property name="resultSetColumn">CODIGO_TIPO_CUENTA</property>
+                        </data>
+                    </cell>
+                    <cell id="391">
+                        <data id="392">
+                            <property name="resultSetColumn">CONTADOR_NCLIENTES_NCAJEROS</property>
+                        </data>
+                    </cell>
+                    <cell id="393">
+                        <data id="394">
+                            <property name="resultSetColumn">IMPORTE_NCLIENTES_NCAJEROS</property>
+                        </data>
+                    </cell>
+                    <cell id="395">
+                        <data id="396">
+                            <property name="resultSetColumn">CONTADOR_NCLIENTES_OCAJEROS</property>
+                        </data>
+                    </cell>
+                    <cell id="397">
+                        <data id="398">
+                            <property name="resultSetColumn">IMPORTE_NCLIENTES_OCAJEROS</property>
+                        </data>
+                    </cell>
+                    <cell id="399">
+                        <data id="400">
+                            <property name="resultSetColumn">CONTADOR_NCLIENTES_ICAJEROS</property>
+                        </data>
+                    </cell>
+                    <cell id="401">
+                        <data id="402">
+                            <property name="resultSetColumn">IMPORTE_NCLIENTES_ICAJEROS</property>
+                        </data>
+                    </cell>
+                    <cell id="403">
+                        <data id="404">
+                            <property name="resultSetColumn">CONTADOR_OCLIENTES_NCAJEROS</property>
+                        </data>
+                    </cell>
+                    <cell id="405">
+                        <data id="406">
+                            <property name="resultSetColumn">IMPORTE_OCLIENTES_NCAJEROS</property>
+                        </data>
+                    </cell>
+                    <cell id="449">
+                        <text-data id="483">
+                            <expression name="valueExpr">row["TOTAL_CONT"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="437">
+                        <text-data id="445">
+                            <expression name="valueExpr">row["TOTAL"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="407">
+                    <property name="height">0.96875in</property>
+                    <property name="textAlign">right</property>
+                    <property name="verticalAlign">top</property>
+                    <cell id="411">
+                        <text id="489">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Totales
+]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="412"/>
+                    <cell id="413">
+                        <text-data id="488">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["CONTADOR_NCLIENTES_NCAJEROS"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="414">
+                        <text-data id="441">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["IMPORTE_NCLIENTES_NCAJEROS"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="415">
+                        <text-data id="487">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["CONTADOR_NCLIENTES_OCAJEROS"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="416">
+                        <text-data id="442">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["IMPORTE_NCLIENTES_OCAJEROS"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="417">
+                        <text-data id="486">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["CONTADOR_NCLIENTES_ICAJEROS"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="418">
+                        <text-data id="443">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["IMPORTE_NCLIENTES_ICAJEROS"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="419">
+                        <text-data id="485">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["CONTADOR_OCLIENTES_NCAJEROS"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="420">
+                        <text-data id="444">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["IMPORTE_OCLIENTES_NCAJEROS"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="450">
+                        <text-data id="484">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["TOTAL_CONT"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="438">
+                        <text-data id="446">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["TOTAL"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">red.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAZABkAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsN
+                DhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/wAALCAAwAGMBAREA/8QAHwAAAQUBAQEBAQEAAAAA
+                AAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEI
+                I0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1
+                dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi
+                4+Tl5ufo6erx8vP09fb3+Pn6/9oACAEBAAA/AP1R2A9efqc0EBR6YrkviZ8UfD3wf8G6h4r8W6nDo+g6
+                fGZLm7nBO3kYUAZLMSdoVcsxIwDXyL8Bv+CtPwv+K3iq60DxVaTfDy4lu2i0u+1OVXtbqIsPKMrrxBIV
+                OSGzGMf6w8Z+3rS7ivYYJYZIp4pVEiSxMGSQEA7lI4I56+/0qw0YZSDlgT0PNN2D3FBQFcc4oVcDGSfr
+                TiAW9x3pSgI/l7Uu0fWjFNlfy0LYzjtUEt0EaNH2gyZAGcZIGePXAB6c/ka+Rf8AgoB8BNK+P2h6Douq
+                arqWkvapNc2U9pMzQxS4A3vAxEc2AWxyrqCQpUMc/I37J3/BLK/1v4p3mrfEm5sr7wLolwr2ttYyh/7Z
+                fO7a6/eijXA3gqCxbapx8w/WrS7C10m1t7Kxtks7S2jWCGGCPbFGiDaqIBwFUYAAGB9QavGZQPmYL369
+                v8kU03EJx+8TJOB8w5Pp1pFnCgbyAMfe6A/r/nFDXUKgsZVwBk/MKX7XEGP7xMA7c7uM88Z9fahrqPHy
+                sGbsA2f5U9X5AIOTntxUlQ3c/wBmtZpsM3loWwoyTgdq/Bf9uL9rj4mfGD4xeVewa74B0Xw9eifQ9BLv
+                BcWsmDsu5GUgtOQCysCVQEiNiMs/qXh/9q74/wCh/BLw58V/iTHZ+I/AC6gvh+wa8hW11LUGdZZWuI5E
+                Ub1TyQjMw2uVUYZgzr6n8Uf+CjS/D79mixuvhvpuqprniu5uVstX1XTjFa6WqBUkZGbMU0wfcFEbOoKs
+                z9AjeC/sS/tyfHfwz480rwVpkN18XLLVp2WPQtVuS06MTud4rtstEo+YsX3RqNzYzk17P/wW0uZ0v/hB
+                5cjQP5Wqb/LkO0NutcDdwejHt0Pocj528afsd+HvCn7L9j8V7X476Xea5c6TZal/wiLbEud06x77cMLg
+                sXTzDx5f8JzjrS+KviZ448cf8E2rIeJtUvtSs9K+JVvZ6Tf3chMpiOm3bvFvIyyox4yTgNsBAQAeffCv
+                4Q/Dvxl4PtNW8T/tDaf4G1iR5Fl0S70i9uZIQrEAmSP5TuAyMeteufH34YaX8Kv2E/Cs3hzx/D8QdM1v
+                x7cXsGuWVnLaABbIwvEVlO84eFj2HOcVF8Nv+Ccnjb4p/swaf8YfDHjWO9vbm3uLyHw3LbyRySCCaWNk
+                SbeQznySVBUA5Azzmvpn/gkP+1P4q+ImqeJPhf4u1e78QHTdPGraTeahIZbiGFZEiliZ2JLLmWIrkkqN
+                wHGAP01qtqKNJp9yqDc5iYKMZyccCviXxN8GfCvxU1TSPDfjvwzBrEEN5Ftgu1eOaHc43FWQiQBsDdtb
+                kZrmf+ChXxc+A0msfDf4PeO9Tu7LR9O1e31bV7Hw7bZTTrNLeVIreXyz+7Ds6HEQeRY0baq70ZvQvHGs
+                fDL4k6ZpuheDbvw34h8IR6FaxppOnmKa1gtt0gjDwgEL0G1WTI2ngDdjr/2Nv2ZPhz8E9F1jxB4Q0I2G
+                q61cvHPczSmaSKBH+W3idiWWLIDYySxxuJ2rj43/AOC30qjWfg+gJ3iDVHK5wQN1r09O/wCXfFcd8TP+
+                CeXgTQv2DdK+Mugahrw8Xjw5pmuXME1xE9pI0ywtcBUWMMoUSOVO4/dGc14lqnxR1Pxd/wAE3rbwlqVw
+                kkPhT4jWkdiqoFaG2uLDUJPLOPvDzBMwJyfnIzgADl/hV8UPgN4Z8D2WneOvgtqPjHxLHJI82rweK7ix
+                SVWYlAIUGFwpUcdcV61+0P8AFrwZ8Tv2G/C9p4C8FXHgXw74d8cSWkWm3eptqLO0tpLOz+Y6hhy+MHPW
+                t34Mf8FQZPgd+ypp3ww0PwY9z4msLO6t4NcuNQXyFeaeWRZPKCbmKCXAG4ZK16H/AMEo/hVc/By/1X4y
+                ePS/hnQdbtf+Ee8PtfxMpvnkYXEkqLgsF22oCscK2WwTxX6paN4u0vXtOivrO8je2kLBWIIztYqevuDW
+                1XG/E3w3Z6l4V1O/Cm21WxtZLiy1GFFM1rMiEpIu5WDFSAcMrA4+6eh/EH4xfsG/FSHxz5/h9rn4k/21
+                fBTemUC+M8rk7rkSOcZJOZi23qWKcivUP2hf2MNa/ZT8GfBHR/Alzeav8Y/EWrXIu9S0gsryTeVFtt4B
+                xiBNzZL/AHvndtqkIn6o/s7eDvFvgf4S6BpPjvUbLVfFiI0+o3OnxeVEZWYsVA7kAhSwwGOTgcCuw8Qe
+                AvDfi54X17QNM1x4QVibUrKK4MYPUKXU4zgZ+lX18P6YmkppS2FsulpEsK2IiUQCMDATZjG3HGMY4rLT
+                4beFIrZ7ZfDeki3kdZHh+wxbGZQwUkbcEjc2D1G4+tM/4Vf4Oxj/AIRTRMf9g+H/AOJ9qlHw58KLZm0H
+                hrSBamQTeSLCLZ5gG0PjbjdjjPpxUcPwy8I286Tw+F9GhnQ5SWPT4VdD6qwXIOSTkVuXmmWuooqXVvFc
+                orB1WZA4BHQ4IxkdjUkVrFCgSONY0GTtVQBycn9amqlrWmprGkXthI7Rx3MLwsy9QGBB/nXiGkfC/WvB
+                3jzRZ2T7bp6TnF3bKF2ja2Aw/h649DXtU+gadearZ6lPY28uoWSyx2l00QMlusm0SBCR8u7YucdcVeWF
+                UbcM59c5qSiiiiiiiv/Z
+            </property>
+        </structure>
+    </list-property>
+</report>

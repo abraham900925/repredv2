@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>PROSA</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    </head>
+    <body bgcolor="#17497C" text="#000000" topmargin="0" marginheight="0" leftmargin="0" marginwidth="0">
+        <script language="JAVASCRIPT">
+	function envia()
+	{
+		document.forms[0].target="_top";
+		document.forms[0].submit();
+	}
+	function logout()
+	{
+		document.forms[0].target="_top";
+		document.forms[0].action="https://www.prosa.com.mx/http://ips280a.prosa.com.mx/logout";
+		document.forms[0].submit();
+	}
+	function switch365()
+	{
+		document.forms[0].action="../../portal/genteprosa/aplic/Switch365.htm";
+		document.forms[0].submit();
+	}
+	function mail()
+	{
+		document.forms[0].target="_blank";
+		document.forms[0].action="https://www.prosa.com.mx/http://correoims.prosa.com.mx";
+		document.forms[0].submit();
+	}
+        </script>
+        <form name="forma" action="../../DesktopServlet" target="_top">
+            <map name="Map">
+                <area shape="rect" coords="669,4,747,26" href="javascript:mail()">
+                <area shape="rect" coords="573,34,641,57" href="javascript:switch365()">
+                <area shape="rect" coords="669,33,756,51" href="https://www.prosa.com.mx/http://appserver.prosa.com.mx:9090/sccgi/scgate?auth" target="_blank">
+                <area shape="rect" coords="570,4,643,28" href="javascript:logout()">
+                <area shape="rect" coords="24,10,177,54" href="javascript:envia()">
+            </map>
+            <table border="0" height="65" cellpadding="0" cellspacing="0" width="100%" align="center">
+                <tr>
+                    <td colspan="3" valign="top" background="./images/fsbkg.jpg">
+                        <img src="./images/framesuperiorGP.jpg" height="65" usemap="#Map" border="0">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" height="30" background="./images/barrainf.jpg">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="15%">
+                                    <a href="/DesktopServlet?action=process&provider=iwtTabProvider&iwtTabProvider.setSelected=mimenu" target="_top">
+                                        <img src="./images/mimenu.jpg" width="119" height="17" border="0">
+                                    </a>
+                                </td>
+                                <td width="18%">
+                                    <a href="/DesktopServlet?action=process&provider=iwtTabProvider&iwtTabProvider.setSelected=indicadores" target="_top">
+                                        <img src="./images/indicadores.jpg" width="140" height="17" border="0">
+                                    </a>
+                                </td>
+                                <td width="16%">
+                                    <a href="/DesktopServlet?action=process&provider=iwtTabProvider&iwtTabProvider.setSelected=aplicaciones" target="_top">
+                                        <img src="./images/aplicaciones.jpg" width="129" height="17" border="0">
+                                    </a>
+                                </td>
+                                <td width="16%">
+                                    <a href="/DesktopServlet?action=process&provider=iwtTabProvider&iwtTabProvider.setSelected=documentos" target="_top">
+                                        <img src="./images/documentos.jpg" width="131" height="17" border="0">
+                                    </a>
+                                </td>
+                                <td width="25%">
+                                    <a href="/DesktopServlet?action=process&provider=iwtTabProvider&iwtTabProvider.setSelected=catalogos" target="_top">
+                                        <img src="./images/catalogos.jpg" width="163" height="17" border="0">
+                                    </a>
+                                </td>
+                                <td width="10%">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
