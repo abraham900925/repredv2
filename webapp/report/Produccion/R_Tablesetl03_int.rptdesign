@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Eclipse BIRT 2.0 -->
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.6" id="1">
+    <property name="author">Wellcom, SA de CV</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.1.2.v20070205-1728 Build &lt;20070205-1728></property>
+    <property name="units">in</property>
+    <text-property name="title">Reporte Compensacion por Cajero (setl03)</text-property>
+    <property name="comments">Copyright (c) 2006 &lt;&lt;Your Company Name here>></property>
+    <text-property name="displayName">Compensacion por Cajero (setl03)</text-property>
+    <parameters>
+        <scalar-parameter name="Fecha_Menor" id="296">
+            <property name="valueType">static</property>
+            <property name="dataType">dateTime</property>
+            <property name="concealValue">false</property>
+            <property name="allowNull">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Fecha_Mayor" id="297">
+            <property name="valueType">static</property>
+            <property name="dataType">dateTime</property>
+            <property name="concealValue">false</property>
+            <property name="allowNull">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Banco" id="432">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.255.220.35:1531:TMMD</property>
+            <property name="odaJndiName">jdbc/SRRTMMDBP</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="5">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FECHA</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CODIGO_BANCO_ADQ</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CAJERO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CODIGO_TIPO_OPERACION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">CODIGO_TIPO_CUENTA</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">CONTADOR_NUESTROS_THAB</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">IMPORTE_NUESTROS_THAB</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">CONTADOR_OTROS_THAB</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">IMPORTE_OTROS_THAB</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">CONTADOR_INTERCAMBIO_THAB</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">IMPORTE_INTERCAMBIO_THAB</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param1</property>
+                    <property name="paramName">Fecha_Menor</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param2</property>
+                    <property name="paramName">Fecha_Mayor</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FECHA</property>
+                    <property name="nativeName">FECHA</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CODIGO_BANCO_ADQ</property>
+                    <property name="nativeName">CODIGO_BANCO_ADQ</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CAJERO</property>
+                    <property name="nativeName">CAJERO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CODIGO_TIPO_OPERACION</property>
+                    <property name="nativeName">CODIGO_TIPO_OPERACION</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">CODIGO_TIPO_CUENTA</property>
+                    <property name="nativeName">CODIGO_TIPO_CUENTA</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">CONTADOR_NUESTROS_THAB</property>
+                    <property name="nativeName">CONTADOR_NUESTROS_THAB</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">IMPORTE_NUESTROS_THAB</property>
+                    <property name="nativeName">IMPORTE_NUESTROS_THAB</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">CONTADOR_OTROS_THAB</property>
+                    <property name="nativeName">CONTADOR_OTROS_THAB</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">IMPORTE_OTROS_THAB</property>
+                    <property name="nativeName">IMPORTE_OTROS_THAB</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">CONTADOR_INTERCAMBIO_THAB</property>
+                    <property name="nativeName">CONTADOR_INTERCAMBIO_THAB</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">IMPORTE_INTERCAMBIO_THAB</property>
+                    <property name="nativeName">IMPORTE_INTERCAMBIO_THAB</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select *
+from TBL_SRR_REP_SETL03
+Where FECHA>=? and FECHA&lt;=?</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FECHA</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FECHA</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CODIGO_BANCO_ADQ</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>4</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CODIGO_BANCO_ADQ</design:label>
+            <design:formattingHints>
+              <design:displaySize>4</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CAJERO</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>6</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CAJERO</design:label>
+            <design:formattingHints>
+              <design:displaySize>6</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CODIGO_TIPO_OPERACION</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CODIGO_TIPO_OPERACION</design:label>
+            <design:formattingHints>
+              <design:displaySize>9</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CODIGO_TIPO_CUENTA</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CODIGO_TIPO_CUENTA</design:label>
+            <design:formattingHints>
+              <design:displaySize>9</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CONTADOR_NUESTROS_THAB</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>7</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTADOR_NUESTROS_THAB</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>IMPORTE_NUESTROS_THAB</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>IMPORTE_NUESTROS_THAB</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CONTADOR_OTROS_THAB</design:name>
+            <design:position>8</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTADOR_OTROS_THAB</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>IMPORTE_OTROS_THAB</design:name>
+            <design:position>9</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>IMPORTE_OTROS_THAB</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CONTADOR_INTERCAMBIO_THAB</design:name>
+            <design:position>10</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTADOR_INTERCAMBIO_THAB</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>IMPORTE_INTERCAMBIO_THAB</design:name>
+            <design:position>11</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>IMPORTE_INTERCAMBIO_THAB</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.5in</property>
+            <property name="leftMargin">0.4791666667in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="345">
+            <property name="width">100%</property>
+            <column id="346">
+                <property name="width">0.8854166667in</property>
+            </column>
+            <column id="347">
+                <property name="width">7.6041666667in</property>
+            </column>
+            <row id="348">
+                <property name="verticalAlign">middle</property>
+                <cell id="349">
+                    <image id="101">
+                        <property name="height">48px</property>
+                        <property name="width">76px</property>
+                        <property name="source">embed</property>
+                        <property name="imageName">red.jpg</property>
+                    </image>
+                </cell>
+                <cell id="350">
+                    <text id="102">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[REPORTE DE COMPENSACION POR CAJERO (Setl03)]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+        <grid id="320">
+            <property name="marginTop">auto</property>
+            <property name="marginLeft">33%</property>
+            <property name="marginBottom">auto</property>
+            <property name="marginRight">auto</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">0.40625in</property>
+            <property name="width">4.2291666667in</property>
+            <column id="330">
+                <property name="width">0.5416666667in</property>
+            </column>
+            <column id="321">
+                <property name="width">1.4791666667in</property>
+            </column>
+            <column id="322">
+                <property name="width">0.4791666667in</property>
+            </column>
+            <column id="323">
+                <property name="width">1.7291666667in</property>
+            </column>
+            <row id="324">
+                <property name="height">0.40625in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="329">
+                    <text id="331">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Del]]></text-property>
+                    </text>
+                </cell>
+                <cell id="325">
+                    <text-data id="328">
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["Fecha_Menor"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+                <cell id="326">
+                    <text id="333">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[al
+]]></text-property>
+                    </text>
+                </cell>
+                <cell id="327">
+                    <property name="verticalAlign">middle</property>
+                    <text-data id="334">
+                        <expression name="valueExpr">params["Fecha_Mayor"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="336">
+            <property name="marginLeft">0pt</property>
+            <property name="height">0.25in</property>
+            <property name="width">2.625in</property>
+            <column id="337">
+                <property name="width">0.8229166667in</property>
+            </column>
+            <column id="338">
+                <property name="width">1.8020833333in</property>
+            </column>
+            <row id="339">
+                <property name="height">0.25in</property>
+                <cell id="340">
+                    <text id="342">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Banco:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="341">
+                    <text-data id="434">
+                        <expression name="valueExpr">params["Banco"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+        <table id="351">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">xx-small</property>
+            <property name="textAlign">left</property>
+            <property name="verticalAlign">middle</property>
+            <property name="width">100%</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FECHA</property>
+                    <expression name="expression">dataSetRow["FECHA"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">CODIGO_BANCO_ADQ</property>
+                    <expression name="expression">dataSetRow["CODIGO_BANCO_ADQ"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CAJERO</property>
+                    <expression name="expression">dataSetRow["CAJERO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CODIGO_TIPO_OPERACION</property>
+                    <expression name="expression">dataSetRow["CODIGO_TIPO_OPERACION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CODIGO_TIPO_CUENTA</property>
+                    <expression name="expression">dataSetRow["CODIGO_TIPO_CUENTA"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CONTADOR_NUESTROS_THAB</property>
+                    <expression name="expression">dataSetRow["CONTADOR_NUESTROS_THAB"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">IMPORTE_NUESTROS_THAB</property>
+                    <expression name="expression">dataSetRow["IMPORTE_NUESTROS_THAB"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CONTADOR_OTROS_THAB</property>
+                    <expression name="expression">dataSetRow["CONTADOR_OTROS_THAB"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">IMPORTE_OTROS_THAB</property>
+                    <expression name="expression">dataSetRow["IMPORTE_OTROS_THAB"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CONTADOR_INTERCAMBIO_THAB</property>
+                    <expression name="expression">dataSetRow["CONTADOR_INTERCAMBIO_THAB"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">IMPORTE_INTERCAMBIO_THAB</property>
+                    <expression name="expression">dataSetRow["IMPORTE_INTERCAMBIO_THAB"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TOTAL</property>
+                    <expression name="expression">row["IMPORTE_NUESTROS_THAB"]+row["IMPORTE_OTROS_THAB"]+row["IMPORTE_INTERCAMBIO_THAB"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">TOTAL_CONT</property>
+                    <expression name="expression">row["CONTADOR_OTROS_THAB"]+row["CONTADOR_NUESTROS_THAB"]+row["CONTADOR_INTERCAMBIO_THAB"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <column id="413"/>
+            <column id="414"/>
+            <column id="415"/>
+            <column id="416"/>
+            <column id="417"/>
+            <column id="418"/>
+            <column id="419"/>
+            <column id="420"/>
+            <column id="438"/>
+            <column id="425"/>
+            <header>
+                <row id="352">
+                    <property name="backgroundColor">#4BC9BC</property>
+                    <property name="color">#FFFFFF</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="359">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="360">
+                            <text-property name="text">Tipo de Operaciones</text-property>
+                        </label>
+                    </cell>
+                    <cell id="361">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="362">
+                            <text-property name="text">Tipo de Cuenta</text-property>
+                        </label>
+                    </cell>
+                    <cell id="363">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="364">
+                            <text-property name="text">Cont. Nuestros Tarjetahabientes</text-property>
+                        </label>
+                    </cell>
+                    <cell id="365">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="366">
+                            <text-property name="text">Imp. Nuestros TarjetaHabientes</text-property>
+                        </label>
+                    </cell>
+                    <cell id="367">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="368">
+                            <text-property name="text">Cont. Otros Tarjetahabientes</text-property>
+                        </label>
+                    </cell>
+                    <cell id="369">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="370">
+                            <text-property name="text">Imp. Otros Tarjetahabientes</text-property>
+                        </label>
+                    </cell>
+                    <cell id="371">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="372">
+                            <text-property name="text">Cont. Intercambio Tarjetahabientes</text-property>
+                        </label>
+                    </cell>
+                    <cell id="373">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="374">
+                            <text-property name="text">Imp. Intercamio Tarjetahabiente</text-property>
+                        </label>
+                    </cell>
+                    <cell id="435">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <text id="439">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Contador Total]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="422">
+                        <property name="borderBottomColor">#FFFFFF</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#FFFFFF</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#FFFFFF</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#FFFFFF</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <text id="426">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Importe Total
+
+]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <group id="634">
+                <property name="groupName">NewTableGroup1</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr">row["CAJERO"]</expression>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <header>
+                    <row id="635">
+                        <cell id="636">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="textAlign">left</property>
+                            <property name="verticalAlign">middle</property>
+                            <data id="657">
+                                <property name="resultSetColumn">CAJERO</property>
+                            </data>
+                        </cell>
+                        <cell id="637"/>
+                        <cell id="638"/>
+                        <cell id="639"/>
+                        <cell id="640"/>
+                        <cell id="641"/>
+                        <cell id="642"/>
+                        <cell id="643"/>
+                        <cell id="644"/>
+                        <cell id="645"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="646">
+                        <cell id="647"/>
+                        <cell id="648"/>
+                        <cell id="649"/>
+                        <cell id="650"/>
+                        <cell id="651"/>
+                        <cell id="652"/>
+                        <cell id="653"/>
+                        <cell id="654"/>
+                        <cell id="655"/>
+                        <cell id="656"/>
+                    </row>
+                </footer>
+            </group>
+            <group id="658">
+                <property name="groupName">NewTableGroup2</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr">row["CODIGO_TIPO_OPERACION"]</expression>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <header>
+                    <row id="659">
+                        <cell id="660"/>
+                        <cell id="661"/>
+                        <cell id="662"/>
+                        <cell id="663"/>
+                        <cell id="664"/>
+                        <cell id="665"/>
+                        <cell id="666"/>
+                        <cell id="667"/>
+                        <cell id="668"/>
+                        <cell id="669"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="670">
+                        <property name="textAlign">right</property>
+                        <property name="verticalAlign">top</property>
+                        <cell id="671">
+                            <text id="682">
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[SubTotales]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="672"/>
+                        <cell id="673">
+                            <text-data id="683">
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <expression name="valueExpr">Total.sum(row["CONTADOR_NUESTROS_THAB"],null, "NewTableGroup1")</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="674">
+                            <text-data id="684">
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <expression name="valueExpr">Total.sum(row["IMPORTE_NUESTROS_THAB"],null, "NewTableGroup1")</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="675">
+                            <text-data id="685">
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <expression name="valueExpr">Total.sum(row["CONTADOR_OTROS_THAB"],null, "NewTableGroup1")</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="676">
+                            <text-data id="686">
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <expression name="valueExpr">Total.sum(row["IMPORTE_OTROS_THAB"],null, "NewTableGroup1")</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="677">
+                            <text-data id="687">
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <expression name="valueExpr">Total.sum(row["CONTADOR_INTERCAMBIO_THAB"],null, "NewTableGroup1")</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="678">
+                            <text-data id="688">
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <expression name="valueExpr">Total.sum(row["IMPORTE_INTERCAMBIO_THAB"],null, "NewTableGroup1")</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="679">
+                            <text-data id="689">
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <expression name="valueExpr">Total.sum(row["TOTAL_CONT"],null, "NewTableGroup1")</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="680">
+                            <text-data id="690">
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <expression name="valueExpr">Total.sum(row["TOTAL"],null, "NewTableGroup1")</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="375">
+                    <property name="textAlign">right</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="382">
+                        <data id="383">
+                            <property name="resultSetColumn">CODIGO_TIPO_OPERACION</property>
+                        </data>
+                    </cell>
+                    <cell id="384">
+                        <data id="385">
+                            <property name="resultSetColumn">CODIGO_TIPO_CUENTA</property>
+                        </data>
+                    </cell>
+                    <cell id="386">
+                        <data id="387">
+                            <property name="resultSetColumn">CONTADOR_NUESTROS_THAB</property>
+                        </data>
+                    </cell>
+                    <cell id="388">
+                        <data id="389">
+                            <property name="resultSetColumn">IMPORTE_NUESTROS_THAB</property>
+                        </data>
+                    </cell>
+                    <cell id="390">
+                        <data id="391">
+                            <property name="resultSetColumn">CONTADOR_OTROS_THAB</property>
+                        </data>
+                    </cell>
+                    <cell id="392">
+                        <data id="393">
+                            <property name="resultSetColumn">IMPORTE_OTROS_THAB</property>
+                        </data>
+                    </cell>
+                    <cell id="394">
+                        <data id="395">
+                            <property name="resultSetColumn">CONTADOR_INTERCAMBIO_THAB</property>
+                        </data>
+                    </cell>
+                    <cell id="396">
+                        <data id="397">
+                            <property name="resultSetColumn">IMPORTE_INTERCAMBIO_THAB</property>
+                        </data>
+                    </cell>
+                    <cell id="436">
+                        <text-data id="440">
+                            <expression name="valueExpr">row["TOTAL_CONT"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="423">
+                        <text-data id="427">
+                            <expression name="valueExpr">row["TOTAL"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="398">
+                    <property name="textAlign">right</property>
+                    <property name="verticalAlign">top</property>
+                    <cell id="402">
+                        <property name="style">NewStyle</property>
+                        <text id="571">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Totales]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="403"/>
+                    <cell id="404">
+                        <property name="style">NewStyle</property>
+                        <text-data id="626">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["CONTADOR_NUESTROS_THAB"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="405">
+                        <property name="style">NewStyle</property>
+                        <text-data id="627">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["IMPORTE_NUESTROS_THAB"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="406">
+                        <property name="style">NewStyle</property>
+                        <text-data id="628">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["CONTADOR_OTROS_THAB"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="407">
+                        <property name="style">NewStyle</property>
+                        <text-data id="629">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["IMPORTE_OTROS_THAB"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="408">
+                        <property name="style">NewStyle</property>
+                        <text-data id="630">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["CONTADOR_INTERCAMBIO_THAB"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="409">
+                        <property name="style">NewStyle</property>
+                        <text-data id="631">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["IMPORTE_INTERCAMBIO_THAB"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="437">
+                        <property name="style">NewStyle</property>
+                        <text-data id="632">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["TOTAL_CONT"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="424">
+                        <property name="style">NewStyle</property>
+                        <text-data id="633">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">double</property>
+                            <property name="borderTopWidth">medium</property>
+                            <expression name="valueExpr">Total.sum(row["TOTAL"])</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">red.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAZABkAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsN
+                DhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/wAALCAAwAGMBAREA/8QAHwAAAQUBAQEBAQEAAAAA
+                AAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEI
+                I0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1
+                dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi
+                4+Tl5ufo6erx8vP09fb3+Pn6/9oACAEBAAA/AP1R2A9efqc0EBR6YrkviZ8UfD3wf8G6h4r8W6nDo+g6
+                fGZLm7nBO3kYUAZLMSdoVcsxIwDXyL8Bv+CtPwv+K3iq60DxVaTfDy4lu2i0u+1OVXtbqIsPKMrrxBIV
+                OSGzGMf6w8Z+3rS7ivYYJYZIp4pVEiSxMGSQEA7lI4I56+/0qw0YZSDlgT0PNN2D3FBQFcc4oVcDGSfr
+                TiAW9x3pSgI/l7Uu0fWjFNlfy0LYzjtUEt0EaNH2gyZAGcZIGePXAB6c/ka+Rf8AgoB8BNK+P2h6Douq
+                arqWkvapNc2U9pMzQxS4A3vAxEc2AWxyrqCQpUMc/I37J3/BLK/1v4p3mrfEm5sr7wLolwr2ttYyh/7Z
+                fO7a6/eijXA3gqCxbapx8w/WrS7C10m1t7Kxtks7S2jWCGGCPbFGiDaqIBwFUYAAGB9QavGZQPmYL369
+                v8kU03EJx+8TJOB8w5Pp1pFnCgbyAMfe6A/r/nFDXUKgsZVwBk/MKX7XEGP7xMA7c7uM88Z9fahrqPHy
+                sGbsA2f5U9X5AIOTntxUlQ3c/wBmtZpsM3loWwoyTgdq/Bf9uL9rj4mfGD4xeVewa74B0Xw9eifQ9BLv
+                BcWsmDsu5GUgtOQCysCVQEiNiMs/qXh/9q74/wCh/BLw58V/iTHZ+I/AC6gvh+wa8hW11LUGdZZWuI5E
+                Ub1TyQjMw2uVUYZgzr6n8Uf+CjS/D79mixuvhvpuqprniu5uVstX1XTjFa6WqBUkZGbMU0wfcFEbOoKs
+                z9AjeC/sS/tyfHfwz480rwVpkN18XLLVp2WPQtVuS06MTud4rtstEo+YsX3RqNzYzk17P/wW0uZ0v/hB
+                5cjQP5Wqb/LkO0NutcDdwejHt0Pocj528afsd+HvCn7L9j8V7X476Xea5c6TZal/wiLbEud06x77cMLg
+                sXTzDx5f8JzjrS+KviZ448cf8E2rIeJtUvtSs9K+JVvZ6Tf3chMpiOm3bvFvIyyox4yTgNsBAQAeffCv
+                4Q/Dvxl4PtNW8T/tDaf4G1iR5Fl0S70i9uZIQrEAmSP5TuAyMeteufH34YaX8Kv2E/Cs3hzx/D8QdM1v
+                x7cXsGuWVnLaABbIwvEVlO84eFj2HOcVF8Nv+Ccnjb4p/swaf8YfDHjWO9vbm3uLyHw3LbyRySCCaWNk
+                SbeQznySVBUA5Azzmvpn/gkP+1P4q+ImqeJPhf4u1e78QHTdPGraTeahIZbiGFZEiliZ2JLLmWIrkkqN
+                wHGAP01qtqKNJp9yqDc5iYKMZyccCviXxN8GfCvxU1TSPDfjvwzBrEEN5Ftgu1eOaHc43FWQiQBsDdtb
+                kZrmf+ChXxc+A0msfDf4PeO9Tu7LR9O1e31bV7Hw7bZTTrNLeVIreXyz+7Ds6HEQeRY0baq70ZvQvHGs
+                fDL4k6ZpuheDbvw34h8IR6FaxppOnmKa1gtt0gjDwgEL0G1WTI2ngDdjr/2Nv2ZPhz8E9F1jxB4Q0I2G
+                q61cvHPczSmaSKBH+W3idiWWLIDYySxxuJ2rj43/AOC30qjWfg+gJ3iDVHK5wQN1r09O/wCXfFcd8TP+
+                CeXgTQv2DdK+Mugahrw8Xjw5pmuXME1xE9pI0ywtcBUWMMoUSOVO4/dGc14lqnxR1Pxd/wAE3rbwlqVw
+                kkPhT4jWkdiqoFaG2uLDUJPLOPvDzBMwJyfnIzgADl/hV8UPgN4Z8D2WneOvgtqPjHxLHJI82rweK7ix
+                SVWYlAIUGFwpUcdcV61+0P8AFrwZ8Tv2G/C9p4C8FXHgXw74d8cSWkWm3eptqLO0tpLOz+Y6hhy+MHPW
+                t34Mf8FQZPgd+ypp3ww0PwY9z4msLO6t4NcuNQXyFeaeWRZPKCbmKCXAG4ZK16H/AMEo/hVc/By/1X4y
+                ePS/hnQdbtf+Ee8PtfxMpvnkYXEkqLgsF22oCscK2WwTxX6paN4u0vXtOivrO8je2kLBWIIztYqevuDW
+                1XG/E3w3Z6l4V1O/Cm21WxtZLiy1GFFM1rMiEpIu5WDFSAcMrA4+6eh/EH4xfsG/FSHxz5/h9rn4k/21
+                fBTemUC+M8rk7rkSOcZJOZi23qWKcivUP2hf2MNa/ZT8GfBHR/Alzeav8Y/EWrXIu9S0gsryTeVFtt4B
+                xiBNzZL/AHvndtqkIn6o/s7eDvFvgf4S6BpPjvUbLVfFiI0+o3OnxeVEZWYsVA7kAhSwwGOTgcCuw8Qe
+                AvDfi54X17QNM1x4QVibUrKK4MYPUKXU4zgZ+lX18P6YmkppS2FsulpEsK2IiUQCMDATZjG3HGMY4rLT
+                4beFIrZ7ZfDeki3kdZHh+wxbGZQwUkbcEjc2D1G4+tM/4Vf4Oxj/AIRTRMf9g+H/AOJ9qlHw58KLZm0H
+                hrSBamQTeSLCLZ5gG0PjbjdjjPpxUcPwy8I286Tw+F9GhnQ5SWPT4VdD6qwXIOSTkVuXmmWuooqXVvFc
+                orB1WZA4BHQ4IxkdjUkVrFCgSONY0GTtVQBycn9amqlrWmprGkXthI7Rx3MLwsy9QGBB/nXiGkfC/WvB
+                3jzRZ2T7bp6TnF3bKF2ja2Aw/h649DXtU+gadearZ6lPY28uoWSyx2l00QMlusm0SBCR8u7YucdcVeWF
+                UbcM59c5qSiiiiiiiv/Z
+            </property>
+        </structure>
+    </list-property>
+</report>

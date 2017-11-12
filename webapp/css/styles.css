@@ -1,0 +1,431 @@
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   /*	line-height: 10px;
+   */
+}
+
+form {
+  
+   background-color: #FFFFFF;
+   /*#CCCC99;*/
+}
+
+td {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 11px;
+  
+  
+}
+
+th {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 11px;
+  
+  
+}
+
+form {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 11px;
+  
+  
+}
+
+input {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 11px;
+  
+  
+}
+
+textarea {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 11px;
+  
+  
+}
+
+select {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 11px;
+  
+  
+}
+
+ul {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 11px;
+  
+  
+   list-style-type: square;
+  
+  
+   list-style-position: outside;
+  
+  
+}
+
+li {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 11px;
+  
+  
+}
+
+ol {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 11px;
+  
+  
+   list-style-type: decimal;
+  
+  
+   list-style-position: outside;
+  
+  
+}
+
+.small {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 9px;
+  
+  
+}
+
+.big {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 18px;
+  
+  
+}
+
+.bodystyle {
+  
+  
+   font-family: Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 11px;
+  
+  
+}
+
+.box1 {
+  
+  
+   padding: 3px;
+  
+  
+   border-width: thin;
+  
+  
+   border-style: solid;
+  
+  
+   border-color: #CCCCCC #666666 #666666 #CCCCCC;
+  
+  
+}
+
+.box2 {
+  
+  
+   border-width: 3px;
+  
+  
+   border-style: solid;
+  
+  
+   padding: 5px;
+  
+  
+}
+
+/* Style of the web work portal's footer (footer.jsp) */
+
+.footer {
+  
+  
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+  
+  
+   font-size: 10px;
+  
+  
+   font-weight: normal;
+  
+  
+   color: #FFFFFF;
+  
+     /* Marca del Cambio : WELL-JMQ-C-04-2006-14  Inicia la Modificacion   12/06/2014 */
+      background-color: #D1220D
+   /* Marca del Cambio : WELL-JMQ-C-04-2006-14  Termina la Modificacion   12/06/2014 */
+}
+
+a {
+  
+  
+   text-decoration: none;
+  
+  
+}
+
+a:hover {
+  
+  
+   text-decoration: underline;
+  
+  
+}
+
+
+.link {
+  
+  
+/* Marca del Cambio : WELL-JMQ-C-04-2006-14  Inicia la Modificacion   12/06/2014 */
+   color: #FFFFFF;
+/* Marca del Cambio : WELL-JMQ-C-04-2006-14  Termina la Modificacion   12/06/2014 */
+  
+  
+   text-decoration: none;
+  
+  
+}
+
+.link:hover {
+  
+  
+/* Marca del Cambio : WELL-JMQ-C-04-2006-14  Inicia la Modificacion   12/06/2014 */  
+   color: #58FAF4;
+/* Marca del Cambio : WELL-JMQ-C-04-2006-14  Termina la Modificacion   12/06/2014 */  
+  
+  
+   text-decoration: underline;
+  
+  
+}
+
+.tabletitle
+{
+  
+  
+   background-color: #999999 /*#1B3869*/
+}
+
+.tablecell
+{
+  
+  
+   background-color: #E9E9E9;
+  
+  
+}
+
+.tabletitle2
+{
+  
+  
+   background-color: #E9E9E9;
+  
+  
+}
+
+.tablecell2
+{
+  
+  
+   background-color: #FFFFFF;
+  
+  
+   color: #666666;
+  
+  
+}
+
+/* Style of the web work portal's table cells */
+.tableData {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   color: #666666;
+   background-color: #FFFFFF;
+}
+
+.titTablaTransDaily {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   font-weight: bold;
+   text-decoration: none;
+   background-color: #E9E9E9 /*#5E85BB;*/
+}
+
+/* Style of the web work portal's table cells */
+.datosTablaTransDaily {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   color: #666666;
+   background-color: #FFFFFF/*#DEE7F7;*/
+}
+
+.tbl_border {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #22568F;
+	border: thin solid #000000;
+}
+.td_header {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #FFFFFF;
+/* Marca del Cambio : WELL-JMQ-C-04-2006-14  Inicia la Modificacion   12/06/2014 */
+	background-color: #D1220D;
+/* Marca del Cambio : WELL-JMQ-C-04-2006-14  Termina la Modificacion   12/06/2014 */
+}
+.td_data {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #22568F;
+}
+/* Marca del Cambio : WELL-JMQ-C-04-2006-14  Inicia la Modificacion   12/06/2014 */
+.gradient {
+    /* Legacy browsers */
+    background: #EF5142 url("gradient-bg.png") repeat-x top;
+    -o-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    
+	/* Internet Explorer */
+    *background: #EF5142;
+    background: #EF5142;
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr=#8B0000, endColorstr=#FF00000);
+    
+	/* Recent browsers */
+    background-image: -webkit-gradient(
+        linear,
+        left top, right bottom,
+        from(#8B0000),
+        to(#EF5142)
+    );
+    background-image: -webkit-linear-gradient(
+        left top,
+        #8B0000,
+        #EF5142
+    );
+    background-image: -moz-linear-gradient(
+        left top,
+        #8B0000,
+        #EF5142
+    );
+    background-image: -o-linear-gradient(
+        left top,
+        #8B0000,
+        #EF5142
+    );
+    background-image: linear-gradient(
+        left top,
+        #8B0000,
+        #EF5142
+    );
+}
+.gradient2 {
+    /* Legacy browsers */
+    background: #8B0000 url("gradient-bg.png") repeat-x top;
+    -o-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    
+	/* Internet Explorer */
+    *background: #8B0000;
+    background: #8B0000;
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr=#8B0000, endColorstr=#8B0000);
+    
+	/* Recent browsers */
+    background-image: -webkit-gradient(
+        linear,
+        left top, right bottom,
+        from(#8B0000),
+        to(#8B0000)
+    );
+    background-image: -webkit-linear-gradient(
+        left top,
+        #8B0000,
+        #8B0000
+    );
+    background-image: -moz-linear-gradient(
+        left top,
+        #8B0000,
+        #8B0000
+    );
+    background-image: -o-linear-gradient(
+        left top,
+        #8B0000,
+        #8B0000
+    );
+    background-image: linear-gradient(
+        left top,
+        #8B0000,
+        #8B0000
+    );
+}
+/* Marca del Cambio : WELL-JMQ-C-04-2006-14  Termina la Modificacion   12/06/2014 */

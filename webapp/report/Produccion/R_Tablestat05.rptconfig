@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Eclipse BIRT 2.0 -->
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.6" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">Fecha_Menor_296</property>
+            <property name="value">11/03/2008 12:00:00 AM</property>
+        </structure>
+        <structure>
+            <property name="name">Fecha_Menor_296_type</property>
+            <property name="value">dateTime</property>
+        </structure>
+        <structure>
+            <property name="name">Fecha_Mayor_297</property>
+            <property name="value">11/03/2008 12:00:00 AM</property>
+        </structure>
+        <structure>
+            <property name="name">Fecha_Mayor_297_type</property>
+            <property name="value">dateTime</property>
+        </structure>
+        <structure>
+            <property name="name">Banco_447</property>
+            <property name="value">B021</property>
+        </structure>
+        <structure>
+            <property name="name">Banco_447_type</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>
